@@ -1,0 +1,7 @@
+{
+  "name": "Natural Wash Pets - Monterenzio",
+  "description": "Sito professionale per il lavaggio cani self-service Natural Wash Pets a Monterenzio, basato sulla tecnologia Magic Box di Pelomagia.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
