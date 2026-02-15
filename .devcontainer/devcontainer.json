@@ -1,0 +1,26 @@
+{
+  "name": "Natural Wash Pets",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bullseye",
+  "forwardPorts": [3000],
+  "mounts": [
+    "source=/mnt/c/Users/l.damico/.codex,target=/home/node/.codex,type=bind,consistency=cached"
+  ],
+  "portsAttributes": {
+    "3000": {
+      "label": "Vite Dev Server",
+      "onAutoForward": "openPreview"
+    }
+  },
+  "postCreateCommand": "npm install",
+  "remoteUser": "node",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "ms-vscode.vscode-typescript-next",
+        "openai.chatgpt"
+      ]
+    }
+  }
+}

@@ -1,6 +1,6 @@
 # Vike Adapter Guide (Static Site Generation - SSG)
 
-Per migrare questo progetto su Vike come sito statico (SSG), segui questa guida. L'obiettivo è generare file HTML statici per ogni rotta, mantenendo l'interattività lato client (Dark Mode, Cookie Consent).
+Per migrare questo progetto su Vike come sito statico, segui questa guida. L'obiettivo è generare file HTML statici per ogni rotta, mantenendo l'interattività lato client (Dark Mode, Cookie Consent).
 
 ## Configurazione Vike (vite.config.js)
 
