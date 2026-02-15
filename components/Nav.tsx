@@ -1,11 +1,16 @@
 
 import React, { useState, useEffect } from 'react';
-import { Sun, Moon, MapPin, Clock } from 'lucide-react';
-import { useApp } from '../App';
+import { Sun, Moon } from 'lucide-react';
 import { BUSINESS_INFO } from '../constants';
+import { NavigationContract } from '../core/navigationContract';
 
-export const Nav: React.FC = () => {
-  const { darkMode, setDarkMode, setView, view } = useApp();
+interface NavProps {
+  navigation: NavigationContract;
+  darkMode: boolean;
+  onToggleDarkMode: (val: boolean) => void;
+}
+
+export const Nav: React.FC<NavProps> = ({ navigation, darkMode, onToggleDarkMode }) => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -13,31 +18,6 @@ export const Nav: React.FC = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const scrollTo = (id: string) => {
-    if (view !== 'home') {
-      setView('home');
-      setTimeout(() => {
-        const element = document.getElementById(id);
-        if (element) element.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
-      return;
-    }
-
-    const element = document.getElementById(id);
-    if (element) {
-      const offset = 80;
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = element.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
-  };
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 smooth-transition ${
@@ -47,7 +27,7 @@ export const Nav: React.FC = () => {
     }`}>
       <div className="container mx-auto px-6 flex items-center justify-between">
         <button 
-          onClick={() => { setView('home'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+          onClick={navigation.goHome}
           className="flex items-center gap-3 group"
         >
           <div className="w-10 h-10 bg-natural-500 rounded-full flex items-center justify-center group-hover:scale-110 smooth-transition">
@@ -59,15 +39,15 @@ export const Nav: React.FC = () => {
         </button>
 
         <div className="hidden lg:flex items-center gap-8 text-sm font-semibold text-natural-700 dark:text-natural-200 uppercase tracking-wider">
-          <button onClick={() => scrollTo('info')} className="hover:text-natural-500 smooth-transition">Chi Siamo</button>
-          <button onClick={() => scrollTo('features')} className="hover:text-natural-500 smooth-transition">Servizi</button>
-          <button onClick={() => scrollTo('testimonials')} className="hover:text-natural-500 smooth-transition">Recensioni</button>
-          <button onClick={() => scrollTo('faq')} className="hover:text-natural-500 smooth-transition">FAQ</button>
+          <button onClick={() => navigation.goSection('info')} className="hover:text-natural-500 smooth-transition">Chi Siamo</button>
+          <button onClick={() => navigation.goSection('features')} className="hover:text-natural-500 smooth-transition">Servizi</button>
+          <button onClick={() => navigation.goSection('testimonials')} className="hover:text-natural-500 smooth-transition">Recensioni</button>
+          <button onClick={() => navigation.goSection('faq')} className="hover:text-natural-500 smooth-transition">FAQ</button>
         </div>
 
         <div className="flex items-center gap-4">
           <button 
-            onClick={() => setDarkMode(!darkMode)}
+            onClick={() => onToggleDarkMode(!darkMode)}
             className="p-2 rounded-full hover:bg-natural-100 dark:hover:bg-zinc-800 smooth-transition"
             aria-label="Toggle Theme"
           >

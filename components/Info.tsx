@@ -5,7 +5,7 @@ import { BUSINESS_INFO, STRINGS } from '../constants';
 
 export const Info: React.FC = () => {
   return (
-    <section id="info" className="py-24 bg-white dark:bg-zinc-900 smooth-transition">
+    <section id="info" className="py-24 bg-white dark:bg-zinc-900 smooth-transition scroll-mt-28">
       <div className="container mx-auto px-6">
         <div className="flex flex-col lg:flex-row gap-16 items-center">
           <div className="lg:w-1/2 space-y-6">

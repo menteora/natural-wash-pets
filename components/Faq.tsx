@@ -7,7 +7,7 @@ export const Faq: React.FC = () => {
   const [openId, setOpenId] = useState<string | null>(null);
 
   return (
-    <section id="faq" className="py-24 bg-natural-50 dark:bg-zinc-950 smooth-transition">
+    <section id="faq" className="py-24 bg-natural-50 dark:bg-zinc-950 smooth-transition scroll-mt-28">
       <div className="container mx-auto px-6">
         <div className="flex flex-col lg:flex-row gap-16">
           <div className="lg:w-1/3">

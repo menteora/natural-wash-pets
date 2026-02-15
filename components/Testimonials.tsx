@@ -5,7 +5,7 @@ import { TESTIMONIALS, STRINGS } from '../constants';
 
 export const Testimonials: React.FC = () => {
   return (
-    <section id="testimonials" className="py-24 bg-white dark:bg-zinc-900 smooth-transition">
+    <section id="testimonials" className="py-24 bg-white dark:bg-zinc-900 smooth-transition scroll-mt-28">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-4xl font-serif font-bold text-natural-900 dark:text-white mb-4">
