@@ -1,3 +1,4 @@
+import './styles/vike.css';
 import { createRoot, hydrateRoot, type Root } from 'react-dom/client';
 import { PageShell } from './PageShell';
 import type { PageContext } from './types';

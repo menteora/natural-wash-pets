@@ -1,0 +1,103 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@plugin "tailwindcss-animate";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-natural-50: #f7f9f6;
+  --color-natural-100: #ebf2ec;
+  --color-natural-200: #d0e0d2;
+  --color-natural-500: #4a7c59;
+  --color-natural-600: #3d664a;
+  --color-natural-700: #32543e;
+  --color-natural-900: #1a2e22;
+
+  --color-wood-100: #f5f1ed;
+  --color-wood-500: #8b5e3c;
+  --color-wood-900: #4a3221;
+
+  --font-sans: "Outfit", sans-serif;
+  --font-serif: "Playfair Display", serif;
+
+  --animate-float: float 4s ease-in-out infinite;
+  --animate-scale-in: scaleIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-pulse-subtle: pulseSubtle 2s ease-in-out infinite;
+  --animate-bounce-subtle: bounceSubtle 0.8s ease-in-out infinite;
+  --animate-bounce-pulse: bouncePulse 0.8s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes pulseSubtle {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes bounceSubtle {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-25%);
+  }
+}
+
+@keyframes bouncePulse {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-25%) scale(1.15);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.smooth-transition {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.text-reveal-wrapper {
+  overflow: hidden;
+  display: block;
+}
+
+.stagger-1 {
+  animation-delay: 0.1s;
+}
+
+.stagger-2 {
+  animation-delay: 0.3s;
+}
+
+.stagger-3 {
+  animation-delay: 0.5s;
+}
