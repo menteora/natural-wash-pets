@@ -34,9 +34,6 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Add CNAME
-        run: echo "naturalwashpets.it" > dist/client/CNAME
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
