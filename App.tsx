@@ -7,7 +7,10 @@ import { Info } from './components/Info';
 import { Testimonials } from './components/Testimonials';
 import { Faq } from './components/Faq';
 import { Footer } from './components/Footer';
-import { AppContextType } from './types';
+import { PrivacyPolicy, CookiePolicy } from './components/Policies';
+import { CookieBanner } from './components/CookieBanner';
+import { GoogleAnalytics } from './components/GoogleAnalytics';
+import { AppContextType, View } from './types';
 import { MessageCircle } from 'lucide-react';
 import { BUSINESS_INFO } from './constants';
 
@@ -21,6 +24,16 @@ export const useApp = () => {
 
 const App: React.FC = () => {
   const [darkMode, setDarkMode] = useState(false);
+  const [view, setView] = useState<View>('home');
+  const [cookiesAccepted, setCookiesAcceptedState] = useState<boolean | null>(() => {
+    const saved = localStorage.getItem('cookiesAccepted');
+    return saved !== null ? JSON.parse(saved) : null;
+  });
+
+  const setCookiesAccepted = (val: boolean) => {
+    setCookiesAcceptedState(val);
+    localStorage.setItem('cookiesAccepted', JSON.stringify(val));
+  };
 
   useEffect(() => {
     if (darkMode) {
@@ -31,17 +44,27 @@ const App: React.FC = () => {
   }, [darkMode]);
 
   return (
-    <AppContext.Provider value={{ darkMode, setDarkMode }}>
-      <div className="min-h-screen bg-natural-50 dark:bg-zinc-950 smooth-transition overflow-x-hidden">
+    <AppContext.Provider value={{ darkMode, setDarkMode, view, setView, cookiesAccepted, setCookiesAccepted }}>
+      <div className="min-h-screen bg-natural-50 dark:bg-zinc-950 smooth-transition overflow-x-hidden font-sans">
+        <GoogleAnalytics accepted={!!cookiesAccepted} />
         <Nav />
+        
         <main>
-          <Hero />
-          <Info />
-          <Features />
-          <Testimonials />
-          <Faq />
+          {view === 'home' && (
+            <>
+              <Hero />
+              <Info />
+              <Features />
+              <Testimonials />
+              <Faq />
+            </>
+          )}
+          {view === 'privacy' && <PrivacyPolicy />}
+          {view === 'cookie' && <CookiePolicy />}
         </main>
+
         <Footer />
+        <CookieBanner />
         
         {/* Floating WhatsApp Button */}
         <a 

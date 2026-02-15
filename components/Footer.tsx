@@ -2,8 +2,11 @@
 import React from 'react';
 import { BUSINESS_INFO } from '../constants';
 import { Instagram, Facebook, Mail } from 'lucide-react';
+import { useApp } from '../App';
 
 export const Footer: React.FC = () => {
+  const { setView } = useApp();
+
   return (
     <footer className="bg-natural-900 text-white pt-20 pb-10">
       <div className="container mx-auto px-6">
@@ -44,12 +47,11 @@ export const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h4 className="font-bold text-lg mb-6">Link Rapidi</h4>
+            <h4 className="font-bold text-lg mb-6">Legale</h4>
             <ul className="space-y-4 text-natural-400">
-              <li><a href="#info" className="hover:text-natural-500 smooth-transition">Dove siamo</a></li>
-              <li><a href="#features" className="hover:text-natural-500 smooth-transition">Servizi</a></li>
-              <li><a href="#faq" className="hover:text-natural-500 smooth-transition">Domande Frequenti</a></li>
-              <li><a href={BUSINESS_INFO.googleMapsUrl} className="hover:text-natural-500 smooth-transition">Navigatore</a></li>
+              <li><button onClick={() => setView('privacy')} className="hover:text-natural-500 smooth-transition text-left">Privacy Policy</button></li>
+              <li><button onClick={() => setView('cookie')} className="hover:text-natural-500 smooth-transition text-left">Cookie Policy</button></li>
+              <li><button onClick={() => setView('cookie')} className="hover:text-natural-500 smooth-transition text-left">Preferenze Cookie</button></li>
             </ul>
           </div>
         </div>

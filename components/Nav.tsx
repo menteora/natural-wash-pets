@@ -5,7 +5,7 @@ import { useApp } from '../App';
 import { BUSINESS_INFO } from '../constants';
 
 export const Nav: React.FC = () => {
-  const { darkMode, setDarkMode } = useApp();
+  const { darkMode, setDarkMode, setView, view } = useApp();
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -15,6 +15,15 @@ export const Nav: React.FC = () => {
   }, []);
 
   const scrollTo = (id: string) => {
+    if (view !== 'home') {
+      setView('home');
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) element.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+      return;
+    }
+
     const element = document.getElementById(id);
     if (element) {
       const offset = 80;
@@ -38,7 +47,7 @@ export const Nav: React.FC = () => {
     }`}>
       <div className="container mx-auto px-6 flex items-center justify-between">
         <button 
-          onClick={() => scrollTo('home')}
+          onClick={() => { setView('home'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
           className="flex items-center gap-3 group"
         >
           <div className="w-10 h-10 bg-natural-500 rounded-full flex items-center justify-center group-hover:scale-110 smooth-transition">
