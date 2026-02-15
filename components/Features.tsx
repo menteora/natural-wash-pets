@@ -6,7 +6,7 @@ export const Features: React.FC = () => {
   return (
     <section 
       id="features" 
-      className="py-24 bg-natural-50 dark:bg-zinc-950 smooth-transition"
+      className="py-24 bg-natural-50 dark:bg-zinc-950 smooth-transition scroll-mt-28"
       aria-labelledby="features-heading"
     >
       <div className="container mx-auto px-6">

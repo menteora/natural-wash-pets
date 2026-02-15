@@ -5,7 +5,7 @@ import { BUSINESS_INFO, STRINGS } from '../constants';
 
 export const Hero: React.FC = () => {
   return (
-    <section id="home" className="relative min-h-[90vh] flex items-center pt-20">
+    <section id="home" className="relative min-h-[90vh] flex items-center pt-20 scroll-mt-28">
       {/* Background patterns */}
       <div className="absolute inset-0 z-0 opacity-10 pointer-events-none overflow-hidden">
         <div className="absolute -top-24 -left-24 w-96 h-96 bg-natural-500 rounded-full blur-3xl"></div>

@@ -2,11 +2,14 @@
 import React from 'react';
 import { BUSINESS_INFO } from '../constants';
 import { Instagram, Facebook, Mail } from 'lucide-react';
-import { useApp } from '../App';
+import { NavigationContract } from '../core/navigationContract';
 
-export const Footer: React.FC = () => {
-  const { setView } = useApp();
+interface FooterProps {
+  navigation: NavigationContract;
+  onOpenCookiePrefs: () => void;
+}
 
+export const Footer: React.FC<FooterProps> = ({ navigation, onOpenCookiePrefs }) => {
   return (
     <footer className="bg-natural-900 text-white pt-20 pb-10">
       <div className="container mx-auto px-6">
@@ -49,9 +52,9 @@ export const Footer: React.FC = () => {
           <div>
             <h4 className="font-bold text-lg mb-6">Legale</h4>
             <ul className="space-y-4 text-natural-400">
-              <li><button onClick={() => setView('privacy')} className="hover:text-natural-500 smooth-transition text-left">Privacy Policy</button></li>
-              <li><button onClick={() => setView('cookie')} className="hover:text-natural-500 smooth-transition text-left">Cookie Policy</button></li>
-              <li><button onClick={() => setView('cookie')} className="hover:text-natural-500 smooth-transition text-left">Preferenze Cookie</button></li>
+              <li><button onClick={navigation.goPrivacy} className="hover:text-natural-500 smooth-transition text-left">Privacy Policy</button></li>
+              <li><button onClick={navigation.goCookie} className="hover:text-natural-500 smooth-transition text-left">Cookie Policy</button></li>
+              <li><button onClick={onOpenCookiePrefs} className="hover:text-natural-500 smooth-transition text-left">Preferenze Cookie</button></li>
             </ul>
           </div>
         </div>
