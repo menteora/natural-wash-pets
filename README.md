@@ -1,6 +1,6 @@
-# Natural Wash Pets - Monterenzio
+# Shampetto - Monterenzio
 
-Un sito web moderno e professionale dedicato al servizio di lavaggio cani self-service **Natural Wash Pets** situato a Monterenzio (BO). Il progetto sponsorizza l'utilizzo della tecnologia all'avanguardia **Magic Box di Pelomagia**.
+Un sito web moderno e professionale dedicato al servizio di lavaggio cani self-service **Shampetto** situato a Monterenzio (BO). Il progetto sponsorizza l'utilizzo della tecnologia all'avanguardia **Magic Box di Pelomagia**.
 
 ## 🐾 Caratteristiche del Progetto
 

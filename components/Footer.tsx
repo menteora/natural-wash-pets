@@ -17,10 +17,10 @@ export const Footer: React.FC<FooterProps> = ({ navigation, onOpenCookiePrefs })
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 bg-natural-500 rounded-full flex items-center justify-center">
-                <span className="text-white font-serif text-xl font-bold">N</span>
+                <span className="text-white font-serif text-xl font-bold">S</span>
               </div>
               <span className="text-2xl font-serif font-bold tracking-tight">
-                Natural Wash <span className="text-natural-500">Pets</span>
+                Shampetto
               </span>
             </div>
             <p className="text-natural-300 max-w-sm mb-8">
@@ -45,7 +45,7 @@ export const Footer: React.FC<FooterProps> = ({ navigation, onOpenCookiePrefs })
             <ul className="space-y-4 text-natural-400">
               <li>{BUSINESS_INFO.address}</li>
               <li>Aperto: {BUSINESS_INFO.hours}</li>
-              <li>Sito: naturalwashpets.it</li>
+              <li>Sito: shampetto.it</li>
             </ul>
           </div>
 
@@ -60,7 +60,7 @@ export const Footer: React.FC<FooterProps> = ({ navigation, onOpenCookiePrefs })
         </div>
 
         <div className="pt-8 border-t border-white/10 text-center text-natural-500 text-sm">
-          <p>&copy; {new Date().getFullYear()} Natural Wash Pets Monterenzio. Powered by Pelomagia Technology.</p>
+          <p>&copy; {new Date().getFullYear()} Shampetto Monterenzio. Powered by Pelomagia Technology.</p>
         </div>
       </div>
     </footer>

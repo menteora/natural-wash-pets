@@ -54,7 +54,7 @@ export const Info: React.FC = () => {
             <div className="relative p-2 bg-natural-100 dark:bg-zinc-800 rounded-[2.5rem] overflow-hidden shadow-inner">
               <div className="aspect-video rounded-[2rem] overflow-hidden bg-zinc-200 dark:bg-zinc-700">
                 <iframe 
-                  title="Mappa Natural Wash Pets"
+                  title="Mappa Shampetto"
                   className="w-full h-full grayscale dark:invert dark:opacity-80 transition-all duration-700"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2855.981882654157!2d11.4111304!3d44.2794358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132ad5a363a033b9%3A0xc0f19d0840c96c4b!2sVia%20Idice%2C%2078%2C%2040050%20Monterenzio%20BO!5e0!3m2!1sit!2sit!4v1715800000000!5m2!1sit!2sit"
                   loading="lazy"

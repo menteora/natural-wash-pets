@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Sun, Moon } from 'lucide-react';
-import { BUSINESS_INFO } from '../constants';
+import { BUSINESS_INFO, TESTIMONIALS } from '../constants';
 import { NavigationContract } from '../core/navigationContract';
 
 interface NavProps {
@@ -31,17 +31,19 @@ export const Nav: React.FC<NavProps> = ({ navigation, darkMode, onToggleDarkMode
           className="flex items-center gap-3 group"
         >
           <div className="w-10 h-10 bg-natural-500 rounded-full flex items-center justify-center group-hover:scale-110 smooth-transition">
-            <span className="text-white font-serif text-xl font-bold">N</span>
+            <span className="text-white font-serif text-xl font-bold">S</span>
           </div>
           <span className="text-xl font-serif font-bold tracking-tight text-natural-900 dark:text-white hidden sm:block">
-            Natural Wash <span className="text-natural-500">Pets</span>
+            Shampetto
           </span>
         </button>
 
         <div className="hidden lg:flex items-center gap-8 text-sm font-semibold text-natural-700 dark:text-natural-200 uppercase tracking-wider">
           <button onClick={() => navigation.goSection('info')} className="hover:text-natural-500 smooth-transition">Chi Siamo</button>
           <button onClick={() => navigation.goSection('features')} className="hover:text-natural-500 smooth-transition">Servizi</button>
-          <button onClick={() => navigation.goSection('testimonials')} className="hover:text-natural-500 smooth-transition">Recensioni</button>
+          {TESTIMONIALS && TESTIMONIALS.length > 0 && (
+            <button onClick={() => navigation.goSection('testimonials')} className="hover:text-natural-500 smooth-transition">Recensioni</button>
+          )}
           <button onClick={() => navigation.goSection('faq')} className="hover:text-natural-500 smooth-transition">FAQ</button>
         </div>
 

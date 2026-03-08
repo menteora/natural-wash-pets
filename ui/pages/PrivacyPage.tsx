@@ -22,7 +22,7 @@ export const PrivacyPage: React.FC<{ navigation: NavigationContract }> = ({ navi
         <div className="prose prose-natural dark:prose-invert max-w-none space-y-8 text-natural-700 dark:text-natural-300 leading-relaxed">
           <section>
             <h2 className="text-2xl font-bold text-natural-900 dark:text-white">1. Informazioni generali</h2>
-            <p>Natural Wash Pets si impegna a proteggere la privacy dei propri utenti. La presente informativa descrive come raccogliamo e trattiamo i dati personali in conformità al GDPR (Regolamento UE 2016/679).</p>
+            <p>Shampetto si impegna a proteggere la privacy dei propri utenti. La presente informativa descrive come raccogliamo e trattiamo i dati personali in conformità al GDPR (Regolamento UE 2016/679).</p>
           </section>
           <section>
             <h2 className="text-2xl font-bold text-natural-900 dark:text-white">2. Titolare del trattamento</h2>

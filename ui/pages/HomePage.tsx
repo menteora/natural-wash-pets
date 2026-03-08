@@ -5,6 +5,7 @@ import { Info } from '../../components/Info';
 import { Features } from '../../components/Features';
 import { Testimonials } from '../../components/Testimonials';
 import { Faq } from '../../components/Faq';
+import { TESTIMONIALS } from '../../constants';
 
 export const HomePage: React.FC = () => {
   return (
@@ -12,7 +13,7 @@ export const HomePage: React.FC = () => {
       <Hero />
       <Info />
       <Features />
-      <Testimonials />
+      {TESTIMONIALS && TESTIMONIALS.length > 0 && <Testimonials />}
       <Faq />
     </>
   );
